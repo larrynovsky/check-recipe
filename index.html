@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Recipe Curator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍳 AI Recipe Curator</h1>
+            <nav>
+                <a href="index.html" class="nav-link active">Analyze Recipe</a>
+                <a href="recipes.html" class="nav-link">My Recipes</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="recipe-input-section">
+                <h2>Paste Your Recipe</h2>
+                <textarea 
+                    id="recipeInput" 
+                    placeholder="Paste your recipe here... Include ingredients, instructions, cooking times, and temperatures."
+                    rows="12"
+                ></textarea>
+                <button id="analyzeBtn" onclick="analyzeRecipe()" class="primary-btn">
+                    🔍 Analyze Recipe
+                </button>
+            </div>
+
+            <div id="loadingSection" class="loading-section hidden">
+                <div class="spinner"></div>
+                <p>Analyzing your recipe...</p>
+            </div>
+
+            <div id="resultsSection" class="results-section hidden">
+                <div class="score-section">
+                    <h2>Recipe Score</h2>
+                    <div class="score-display">
+                        <span id="recipeScore">0</span>/10
+                    </div>
+                </div>
+
+                <div class="feedback-section">
+                    <div class="feedback-column">
+                        <h3>✅ Positive Aspects</h3>
+                        <ul id="positiveList" class="feedback-list positive"></ul>
+                    </div>
+                    
+                    <div class="feedback-column">
+                        <h3>⚠️ Issues Found</h3>
+                        <ul id="issuesList" class="feedback-list issues"></ul>
+                    </div>
+                </div>
+
+                <div id="saveSection" class="save-section hidden">
+                    <button id="saveBtn" onclick="saveRecipe()" class="secondary-btn">
+                        💾 Save to Favorites
+                    </button>
+                </div>
+            </div>
+
+            <div id="errorSection" class="error-section hidden">
+                <h3>❌ Error</h3>
+                <p id="errorMessage"></p>
+                <button onclick="hideError()" class="secondary-btn">Try Again</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

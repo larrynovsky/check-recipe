@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Recipes - AI Recipe Curator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍳 AI Recipe Curator</h1>
+            <nav>
+                <a href="index.html" class="nav-link">Analyze Recipe</a>
+                <a href="recipes.html" class="nav-link active">My Recipes</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="recipes-header">
+                <h2>My Favorite Recipes</h2>
+                <button id="clearAllBtn" onclick="clearAllRecipes()" class="danger-btn">
+                    🗑️ Clear All Recipes
+                </button>
+            </div>
+
+            <div id="recipesList" class="recipes-list">
+                <!-- Recipes will be loaded here -->
+            </div>
+
+            <div id="emptyState" class="empty-state">
+                <h3>No recipes saved yet</h3>
+                <p>Analyze a recipe with a score of 7+ to save it to your favorites!</p>
+                <a href="index.html" class="primary-btn">Analyze a Recipe</a>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
