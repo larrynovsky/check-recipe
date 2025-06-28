@@ -24,7 +24,7 @@ SECURITY NOTE: For production use, consider using a backend service to hide your
 */
 
 // ===== CONFIGURATION =====
-const OPENAI_API_KEY = 'sk-Mfz_NI2jh3jjhQKotXHdP4C_im9AhtTJejuo5tAFApT3BlbkFJzGjgU4kZYypPeAgMTdFK_f4m2UnOAAWGn83jmbHlYA'; // Replace with your actual API key
+const OPENAI_API_KEY = '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'; // Replace with your actual API key
 const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
 
 // ===== GLOBAL VARIABLES =====
