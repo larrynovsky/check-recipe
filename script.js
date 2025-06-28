@@ -24,7 +24,7 @@ SECURITY NOTE: For production use, consider using a backend service to hide your
 */
 
 // ===== CONFIGURATION =====
-const OPENAI_API_KEY = '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'; // Replace with your actual API key
+const OPENAI_API_KEY = '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'; // Replace with your actual API key
 const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
 
 // ===== GLOBAL VARIABLES =====
@@ -87,7 +87,7 @@ async function analyzeRecipe() {
 }
 
 async function callOpenAI(recipeText) {
-    const prompt = `You are a professional chef and recipe reviewer. Analyze the following recipe and provide detailed feedback.
+    const prompt = `Ты — профессиональный шеф-повар и критик рецептов. Проанализируй следующий рецепт и дай подробный отзыв. Если во входном тексте нет никакого рецепта — просто пошути с сарказмом. Всегда переводи свой ответ на русский язык.
 
 RECIPE TO ANALYZE:
 ${recipeText}
@@ -100,17 +100,17 @@ Please provide your analysis in the following JSON format:
   "summary": "brief overall assessment"
 }
 
-EVALUATION CRITERIA:
-- Logical ingredient proportions and ratios
-- Realistic cooking times and temperatures
-- Complete and clear step-by-step instructions
-- Temperature and timing consistency throughout
-- All ingredients mentioned in the instructions
-- Practical feasibility and common cooking knowledge
-- Proper food safety considerations
-- Appropriate serving sizes and yields
+КРИТЕРИИ ОЦЕНКИ:
 
-Be specific and actionable in your feedback. Focus on what makes a recipe work well or what could cause problems for a home cook. Always translate your answer to Russian`;
+Логичные пропорции и соотношения ингредиентов
+Реалистичное время приготовления и температуры
+Полные и понятные пошаговые инструкции
+Последовательность температур и времени на всех этапах
+Все ингредиенты упомянуты в инструкциях
+Практическая реализуемость и опора на общие кулинарные знания
+Учет правил пищевой безопасности
+Адекватные порции и выход готового блюда
+Дай конкретную и практичную обратную связь. Сосредоточься на том, что делает рецепт действительно работающим, и на том, что может вызвать затруднения у домашнего повара. `;
 
     const response = await fetch(OPENAI_API_URL, {
         method: 'POST',
